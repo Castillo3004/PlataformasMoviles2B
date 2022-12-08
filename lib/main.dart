@@ -1,4 +1,10 @@
+
+import 'package:ejemploflutter/mascotas.dart';
 import 'package:flutter/material.dart';
+
+import 'servicios.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -10,45 +16,74 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
-      ),
+      debugShowCheckedModeBanner: false, //elimina la cinta de debug
+      title: "Flutter Demo",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+    ),
+      routes: <String, WidgetBuilder>{
+        "/servicios" : (BuildContext context) => Servicios(),
+        "/mascotas": (BuildContext context) => Mascotas(),
+        "/inicio": (BuildContext context) => MyHomePage()
+      },
+      home: MyHomePage(),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({super.key});
+class MyHomePage extends StatelessWidget{
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
+  Widget build(BuildContext context){
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  @override
-  Widget build(BuildContext context) {
-    final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+    final button1 = new ElevatedButton(
+      child: Text("Servicios"),
+      style: ElevatedButton.styleFrom(
+        primary: Colors.deepOrange,
+        onPrimary: Colors.white,
+        elevation: 5,
+        shadowColor: Colors.black
+      ),
+      onPressed: (){
+        Navigator.pushNamed(context, '/servicios');
+      }
+    );
 
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          ElevatedButton(
-            style: style,
-            onPressed: null,
-            child: const Text('Disabled'),
-          ),
-          const SizedBox(height: 30),
-          ElevatedButton(
-            style: style,
-            onPressed: () {},
-            child: const Text('Enabled'),
-          ),
-        ],
+    final button2 = new ElevatedButton(
+        child: Text("Mascotas"),
+        style: ElevatedButton.styleFrom(
+            primary: Colors.deepPurpleAccent,
+            onPrimary: Colors.white,
+            elevation: 5,
+            shadowColor: Colors.black
+        ),
+        onPressed: (){
+          Navigator.pushNamed(context, '/mascotas');
+        }
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Ventana de incio"),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Image(
+                image: AssetImage("github-logo.png"),
+            ),
+            button1,
+            button2,
+          ],
+
+        ),
       ),
     );
+
   }
 }
+
+
