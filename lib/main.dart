@@ -1,7 +1,14 @@
 
 import 'package:ejemploflutter/anContainer.dart';
+import 'package:ejemploflutter/anbuilder.dart';
+import 'package:ejemploflutter/anfractionally.dart';
 import 'package:ejemploflutter/animateSlide.dart';
 import 'package:ejemploflutter/animatebuilder.dart';
+import 'package:ejemploflutter/altransition.dart';
+import 'package:ejemploflutter/anpading.dart';
+import 'package:ejemploflutter/ansize.dart';
+import 'package:ejemploflutter/answitcher.dart';
+import 'package:ejemploflutter/chactivator.dart';
 import 'package:ejemploflutter/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +39,14 @@ class MyApp extends StatelessWidget {
         "/btnelevated": (BuildContext context) => Elevatedbtn(),
         "/anlistsample": (BuildContext context) => AnListSample(),
         "/ancontainer": (BuildContext context) => AnContainer(),
-        "/anslide": (BuildContext context) => AnSlide()
+        "/anslide": (BuildContext context) => AnSlide(),
+        "/altransition": (BuildContext context) => AlTransition(),
+        "/animfrtl": (BuildContext context) => AnFract(),
+        "/anpading": (BuildContext context) => AnPading(),
+        "/answitcher": (BuildContext context) => AnSwitcher(),
+        "/anbuilder": (BuildContext context) => AnBuilder(),
+        "/ansize": (BuildContext context) => Ansize(),
+        "/chactivator": (BuildContext context) => ChActivator()
 
 
       },
@@ -125,7 +139,7 @@ class MyHomePage extends StatelessWidget{
     );
 
     final button7 = new ElevatedButton(
-        child: Text("Home Page"),
+        child: Text("Align Transition"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepOrange,
             onPrimary: Colors.white,
@@ -133,12 +147,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/homepage');
+          Navigator.pushNamed(context, '/altransition');
         }
     );
 
     final button8 = new ElevatedButton(
-        child: Text("AppBar"),
+        child: Text("Animated Fractionally"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepPurpleAccent,
             onPrimary: Colors.white,
@@ -146,12 +160,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/appbar');
+          Navigator.pushNamed(context, '/animfrtl');
         }
     );
 
     final button9 = new ElevatedButton(
-        child: Text("ElevatedButton"),
+        child: Text("Animated Padding"),
         style: ElevatedButton.styleFrom(
             primary: Colors.amber,
             onPrimary: Colors.white,
@@ -159,12 +173,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/elevatedbutton');
+          Navigator.pushNamed(context, '/anpading');
         }
     );
 
     final button10 = new ElevatedButton(
-        child: Text("Home Page"),
+        child: Text("Animated Switcher"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepOrange,
             onPrimary: Colors.white,
@@ -172,12 +186,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/homepage');
+          Navigator.pushNamed(context, '/answitcher');
         }
     );
 
     final button11 = new ElevatedButton(
-        child: Text("AppBar"),
+        child: Text("Animated Builder"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepPurpleAccent,
             onPrimary: Colors.white,
@@ -185,12 +199,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/appbar');
+          Navigator.pushNamed(context, '/anbuilder');
         }
     );
 
     final button12 = new ElevatedButton(
-        child: Text("ElevatedButton"),
+        child: Text("Animated Size"),
         style: ElevatedButton.styleFrom(
             primary: Colors.amber,
             onPrimary: Colors.white,
@@ -198,12 +212,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/elevatedbutton');
+          Navigator.pushNamed(context, '/ansize');
         }
     );
 
     final button13 = new ElevatedButton(
-        child: Text("Home Page"),
+        child: Text("Character Activator"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepOrange,
             onPrimary: Colors.white,
@@ -211,7 +225,7 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/homepage');
+          Navigator.pushNamed(context, '/chactivator');
         }
     );
 
