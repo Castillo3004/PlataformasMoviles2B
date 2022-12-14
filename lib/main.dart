@@ -1,4 +1,7 @@
 
+import 'package:ejemploflutter/anContainer.dart';
+import 'package:ejemploflutter/animateSlide.dart';
+import 'package:ejemploflutter/animatebuilder.dart';
 import 'package:ejemploflutter/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +29,10 @@ class MyApp extends StatelessWidget {
         "/inicio": (BuildContext context) => MyHomePage(),
         "/homepage": (BuildContext context) => HomePage(),
         "/appbar": (BuildContext context) => AppBarApp(),
-        "/elevatedbutton": (BuildContext context) => Elevatedbtn()
+        "/btnelevated": (BuildContext context) => Elevatedbtn(),
+        "/anlistsample": (BuildContext context) => AnListSample(),
+        "/ancontainer": (BuildContext context) => AnContainer(),
+        "/anslide": (BuildContext context) => AnSlide()
 
 
       },
@@ -75,12 +81,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/elevatedbutton');
+          Navigator.pushNamed(context, '/btnelevated');
         }
     );
 
     final button4 = new ElevatedButton(
-        child: Text("Home Page"),
+        child: Text("Animated List Sample"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepOrange,
             onPrimary: Colors.white,
@@ -88,12 +94,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/homepage');
+          Navigator.pushNamed(context, '/anlistsample');
         }
     );
 
     final button5 = new ElevatedButton(
-        child: Text("AppBar"),
+        child: Text("Animated Container"),
         style: ElevatedButton.styleFrom(
             primary: Colors.deepPurpleAccent,
             onPrimary: Colors.white,
@@ -101,12 +107,12 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/appbar');
+          Navigator.pushNamed(context, '/ancontainer');
         }
     );
 
     final button6 = new ElevatedButton(
-        child: Text("ElevatedButton"),
+        child: Text("Animated Slide"),
         style: ElevatedButton.styleFrom(
             primary: Colors.amber,
             onPrimary: Colors.white,
@@ -114,7 +120,7 @@ class MyHomePage extends StatelessWidget{
             shadowColor: Colors.black
         ),
         onPressed: (){
-          Navigator.pushNamed(context, '/elevatedbutton');
+          Navigator.pushNamed(context, '/anslide');
         }
     );
 
